@@ -1,0 +1,25 @@
+{
+  "name": "zerogen-learning",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build && node scripts/build-sw.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test --experimental-test-isolation=none tests/*.test.ts",
+    "test:browser": "playwright test",
+    "test:rules": "bash scripts/test-rules.sh",
+    "test:sync-browser": "ZEROGEN_BROWSER_SYNC=1 bash scripts/test-rules.sh",
+    "test:pwa": "playwright test --config playwright.pwa.config.ts"
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "^6.0.0",
+    "@playwright/test": "^1.56.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.10"
+  },
+  "dependencies": {
+    "firebase": "^13.0.0"
+  }
+}

@@ -1,0 +1,94 @@
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#edf2ed;background:#131715;font-synthesis:none;color-scheme:dark;line-height:1.6;font-size:16px;--muted:#a9b5ab;--accent:#b6db91;--line:#364039}
+
+*{box-sizing:border-box}
+body{margin:0}
+header,main,footer{width:min(100% - 40px,860px);margin:auto}
+header{display:flex;justify-content:space-between;align-items:center;padding:30px 0;border-bottom:1px solid var(--line)}
+.brand{text-decoration:none;color:inherit;font-weight:800;letter-spacing:.03em}
+.brand span{color:var(--accent)}
+.brand small{font-size:.68rem;font-weight:500;letter-spacing:.16em;margin-left:10px}
+#sync-status{font-size:.8rem;color:var(--muted);border:1px solid var(--line);padding:3px 10px;border-radius:4px}
+section{padding:40px 0;border-bottom:1px solid var(--line)}
+h1,h2,h3,p{margin:0}
+h1{font-size:1.05rem;font-weight:500;color:var(--muted)}
+h2{font-size:1.3rem;line-height:1.3;letter-spacing:-.02em}
+h3{font-size:1.05rem;font-weight:600;line-height:1.4;overflow-wrap:anywhere}
+.eyebrow{font-size:.68rem;letter-spacing:.15em;color:var(--accent);margin-bottom:12px}
+.next-title{font-size:clamp(1.7rem,5vw,2.7rem);margin:16px 0 8px;max-width:730px;font-weight:600}
+.muted,.hint{color:var(--muted);font-size:.88rem}
+.hint{margin-top:16px;max-width:50ch}
+#next-course>.primary{margin-top:24px}
+.section-heading,.actions{display:flex;gap:12px;align-items:center;justify-content:space-between}
+.actions{justify-content:flex-start;flex-wrap:wrap}
+button,.primary,.file-button{border:1px solid #526054;border-radius:5px;background:transparent;color:inherit;font:inherit;font-size:.85rem;padding:10px 14px;min-height:44px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;line-height:1.4}
+button:hover,.file-button:hover{background:#263029}
+.primary{background:var(--accent);color:#172011;border-color:var(--accent);font-weight:650}
+.primary:hover{background:#c9e9aa}
+button:disabled{opacity:.4;cursor:default}
+button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,.file-button:focus-within{outline:2px solid var(--accent);outline-offset:4px}
+#course-list,#archive-list{list-style:none;padding:0;margin:22px 0 0}
+#course-list>li{padding:24px 0;border-top:1px solid var(--line)}
+.course-title{display:flex;gap:16px;align-items:baseline}
+.course-title>div{flex:1;min-width:0}
+.number{font-size:.75rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.course-link{color:var(--accent);white-space:nowrap;font-size:.8rem;min-height:44px;display:inline-flex;align-items:center}
+.course-options{display:flex;gap:24px;flex-wrap:wrap;align-items:center;margin:14px 0}
+.completion{display:flex;align-items:center;gap:8px;font-size:.88rem;min-height:44px}
+.completion input{width:20px;height:20px;accent-color:var(--accent)}
+.score-form{display:flex;gap:8px;align-items:end}
+.score-form label{font-size:.75rem}
+.score-form input{display:inline-block;width:75px;margin:0 0 0 8px}
+.score-form button{font-size:.75rem}
+.course-tools{display:flex;gap:6px;flex-wrap:wrap}
+.course-tools button{font-size:.75rem;min-width:44px;padding:8px 12px}
+.course-tools button:nth-child(n+3){border-color:transparent;color:var(--muted)}
+input{font:inherit;background:#1b211d;color:inherit;border:1px solid #627064;border-radius:4px;padding:10px;width:100%;min-height:44px}
+dialog{background:#1b211d;color:inherit;border:1px solid var(--line);border-radius:8px;padding:28px;width:min(480px,calc(100% - 32px))}
+dialog::backdrop{background:#000b}
+#course-form>label{display:block;margin:20px 0;font-size:.9rem}
+#course-form input{display:block;margin-top:6px}
+#form-error{color:#ffbaab;font-size:.85rem;margin-bottom:16px}
+.stats-line{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin:24px 0 10px}
+.stats-line strong{font-size:1.6rem;font-weight:600}
+.stats-line span{color:var(--muted);font-size:.88rem}
+progress{width:100%;height:7px;display:block;appearance:none;border:0;background:#303b32;border-radius:3px;margin-bottom:14px}
+progress::-webkit-progress-bar{background:#303b32;border-radius:3px}
+progress::-webkit-progress-value{background:var(--accent);border-radius:3px}
+progress::-moz-progress-bar{background:var(--accent)}
+details{margin-top:24px}
+summary{cursor:pointer;color:var(--muted);font-size:.85rem;min-height:44px;padding:10px 0}
+details>.muted{margin:8px 0 16px}
+.file-button{position:relative;overflow:hidden}
+.file-button input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.file-button:has(input:disabled){opacity:.4;pointer-events:none}
+#archive-list li{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:10px 0}
+#notice:empty{display:none}
+#notice{margin-top:20px;padding:12px 14px;background:#222c23;border-left:3px solid var(--accent);font-size:.88rem}
+#notice.error{border-color:#ffbaab;color:#ffd8ce;background:#2c201b}
+footer{padding:24px 0 40px;color:var(--muted);font-size:.7rem;display:flex;justify-content:space-between;gap:20px}
+.skip{position:absolute;top:-100px;left:20px;background:var(--accent);color:#131715;padding:12px;z-index:100}
+.skip:focus{top:8px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#cloud-controls form{display:grid;gap:12px;max-width:360px}
+#cloud-controls label{font-size:.85rem}
+#cloud-controls .actions{margin-top:14px}
+.conflict{border-left:3px solid var(--accent);padding-left:16px;margin-top:16px}
+
+@media(max-width:540px){header,main,footer{width:calc(100% - 32px)}
+header{padding:22px 0}
+.brand small{display:block;margin-left:0;font-size:.6rem}
+section{padding:30px 0}
+.section-heading{align-items:center;gap:10px}
+.section-heading h2{font-size:1.2rem}
+.section-heading button{font-size:.75rem;padding:10px}
+.course-title{gap:10px}
+.course-options{gap:4px}
+.score-form{flex-wrap:wrap}
+.score-form label{font-size:.75rem}
+.course-options>form{width:100%}
+.number{font-size:.65rem}
+.stats-line strong{font-size:1.4rem}
+footer{font-size:.65rem}
+.hint{font-size:.8rem}
+}
+

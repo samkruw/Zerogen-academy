@@ -1,0 +1,11 @@
+{
+  "id": "./", "name": "ZeroGen Learning", "short_name": "ZeroGen",
+  "description": "Ein Kurs nach dem anderen. Dein persönlicher Learning Tracker.",
+  "lang": "de", "start_url": "./", "scope": "./", "display": "standalone",
+  "background_color": "#131715", "theme_color": "#131715",
+  "icons": [
+    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

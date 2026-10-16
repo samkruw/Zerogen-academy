@@ -1,0 +1,31 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "users": {
+      "$uid": {
+        "courses": {
+          ".read": "auth != null && auth.uid === $uid && auth.uid === 'REPLACE_WITH_OWNER_UID'",
+          ".write": "auth != null && auth.uid === $uid && auth.uid === 'REPLACE_WITH_OWNER_UID' && newData.exists()",
+          ".validate": "newData.hasChildren(['revision']) && (!data.exists() || newData.child('revision').val() !== data.child('revision').val())",
+          "revision": { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 100" },
+          "items": {
+            "$id": {
+              ".validate": "$id.matches(/^[a-zA-Z0-9_-]{1,100}$/) && newData.hasChildren(['id', 'title', 'url', 'order', 'completed', 'archived']) && (!newData.child('score').exists() || newData.child('completed').val() === true)",
+              "id": { ".validate": "newData.isString() && newData.val() === $id" },
+              "title": { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 200 && newData.val().matches(/.*[^ ].*/)" },
+              "url": { ".validate": "newData.isString() && newData.val().length <= 2048 && newData.val().matches(/^https:\\/\\/[^@ ]+$/)" },
+              "provider": { ".validate": "newData.isString() && newData.val().length <= 100" },
+              "order": { ".validate": "newData.isNumber() && newData.val() % 1 === 0 && newData.val() >= -9007199254740991 && newData.val() <= 9007199254740991" },
+              "completed": { ".validate": "newData.isBoolean()" },
+              "archived": { ".validate": "newData.isBoolean()" },
+              "score": { ".validate": "newData.isNumber() && newData.val() % 1 === 0 && newData.val() >= 0 && newData.val() <= 100" },
+              "$other": { ".validate": false }
+            }
+          },
+          "$other": { ".validate": false }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#131715" />
+  <meta name="description" content="Dein persönlicher Lernfluss. Kurse öffnen, abschliessen und echte Noten festhalten." />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+  <title>ZeroGen Learning</title>
+</head>
+<body>
+  <a class="skip" href="#now">Zum Inhalt</a>
+  <header><a class="brand" href="#now">ZERO<span>GEN</span> <small>LEARNING</small></a><span id="sync-status">lokal</span></header>
+  <main>
+    <p id="notice" role="status" aria-live="polite"></p>
+    <section id="now" aria-labelledby="now-title"><p class="eyebrow">DEIN NÄCHSTER SCHRITT</p><h1 id="now-title">Jetzt lernen</h1><div id="next-course"></div></section>
+    <section aria-labelledby="courses-title">
+      <div class="section-heading"><h2 id="courses-title">Meine Kurse</h2><button id="add-course">Kurs hinzufügen</button></div>
+      <p class="muted">Deine Reihenfolge. Dein Tempo.</p>
+      <ol id="course-list"></ol>
+      <details id="archive"><summary>Archiv <span id="archive-count"></span></summary><ul id="archive-list"></ul></details>
+      <dialog id="editor" aria-labelledby="editor-title">
+        <form id="course-form">
+          <h2 id="editor-title">Kurs hinzufügen</h2>
+          <label>Titel<input name="title" required maxlength="200" autocomplete="off" /></label>
+          <label>Kursadresse (HTTPS)<input name="url" type="url" required maxlength="2048" placeholder="https://…" /></label>
+          <p id="form-error" role="alert"></p>
+          <div class="actions"><button type="submit" class="primary">Speichern</button><button type="button" id="cancel-edit">Abbrechen</button></div>
+        </form>
+      </dialog>
+    </section>
+    <section aria-labelledby="progress-title"><h2 id="progress-title">Fortschritt</h2><div id="stats"></div>
+      <details><summary>Sicherung & Synchronisierung</summary>
+        <p class="muted">Sofort auf diesem Gerät gespeichert. Regelmässig eine JSON-Sicherung herunterladen.</p>
+        <div class="actions"><button id="export">JSON exportieren</button><label class="file-button">JSON importieren<input type="file" id="import" accept="application/json,.json" /></label><button id="previous-backup">Vorherigen Stand exportieren</button></div>
+        <p id="cloud-info" class="muted">Firebase ist nicht eingerichtet. Dein Lernstand bleibt lokal.</p><div id="cloud-controls"></div>
+      </details>
+    </section>
+  </main>
+  <footer>ZeroGen Learning <span>Ein Kurs nach dem anderen.</span></footer>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
